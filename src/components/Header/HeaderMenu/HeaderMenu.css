@@ -1,0 +1,15 @@
+.header__menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.header__menu-link{
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 1px solid green;
+    border-radius: 10px;
+}
