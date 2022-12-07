@@ -1,0 +1,26 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+}
+
+.link {
+    display: inline-block;
+    background-color: #fff;
+    padding: 10px 15px;
+    border: 1px solid green;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.link:hover{
+    background-color: green;
+    color: #fff;
+}
+
+.active{
+    background-color: green;
+    color: #fff;
+}
