@@ -1,5 +1,6 @@
 import { Component } from "react";
 import styles from "./ToggleButton.module.scss";
+import PropTypes from "prop-types";
 
 class ToggleButton extends Component {
   state = {
@@ -27,3 +28,7 @@ class ToggleButton extends Component {
 }
 
 export default ToggleButton;
+
+ToggleButton.propTypes = {
+  text: PropTypes.string.isRequired,
+};
