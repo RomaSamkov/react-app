@@ -4,6 +4,7 @@ import FormAddBook from "./components/FormAddBook/FormAddBook";
 // import ToggleButton from "./components/ToggleButton/ToggleButton";
 // import Vote from "./components/Vote/Vote";
 // import menuItems from "./data/menuItems.json";
+const items = {};
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       {/* <Menu menuItems={menuItems} /> */}
       {/* <ToggleButton text="Click Me" /> */}
       {/* <Vote /> */}
-      <FormAddBook />
+      <FormAddBook onSubmit={() => {}} />
     </div>
   );
 }
