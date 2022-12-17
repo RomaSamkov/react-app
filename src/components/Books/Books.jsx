@@ -19,9 +19,11 @@ class Books extends Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     const { books } = this.state;
-    localStorage.setItem("books", JSON.stringify(books));
+    if (prevState.books.length !== books.length) {
+      localStorage.setItem("books", JSON.stringify(books));
+    }
   }
 
   addBook = (data) => {
