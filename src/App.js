@@ -1,5 +1,6 @@
 // import Books from "./components/Books/Books";
-import Posts from "./components/Posts/Posts";
+// import Posts from "./components/Posts/Posts";
+import PostsSearch from "./components/PostSearch/PostsSearch";
 
 // import { Header } from "./components/Header/Header";
 // import Menu from "./components/Menu/Menu";
@@ -15,7 +16,8 @@ function App() {
       {/* <ToggleButton text="Click Me" /> */}
       {/* <Vote /> */}
       {/* <Books /> */}
-      <Posts />
+      {/* <Posts /> */}
+      <PostsSearch />
     </div>
   );
 }
