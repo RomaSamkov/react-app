@@ -2,6 +2,7 @@ import { Component } from "react";
 import styles from "./Posts.module.scss";
 // import axios from "axios";
 import { getPosts } from "../../servises/api/posts";
+import PostList from "../../servises/components/PostList/PostList";
 
 class Posts extends Component {
   state = {
@@ -73,20 +74,15 @@ class Posts extends Component {
   render() {
     const { items, loading, error } = this.state;
     const { loadMore } = this;
-
-    const element = items.map(({ id, title }) => (
-      <li key={id} className={styles.item}>
-        {title}
-      </li>
-    ));
+    const isPosts = Boolean(items.length);
 
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>List of Posts:</h2>
-        <ul className={styles.list}>{element}</ul>
+        {isPosts && <PostList items={items} />}
         {loading && <p>...Loading posts!!!</p>}
         {error && <p>Failed Loading posts!</p>}
-        {Boolean(items.length) && <button onClick={loadMore}>Load More</button>}
+        {isPosts && <button onClick={loadMore}>Load More</button>}
       </div>
     );
   }
