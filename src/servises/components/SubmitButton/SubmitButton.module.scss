@@ -6,4 +6,11 @@
     background-color: #fff;
     border: 1px solid rgb(128, 0, 100);
     border-radius: 5px;
+    margin-left: 20px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(128, 0, 100);
+    transition: all 500ms;
 }
