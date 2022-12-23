@@ -15,3 +15,12 @@ export const getPosts = async (_page = 1) => {
   });
   return data;
 };
+
+export const searchPosts = async (q) => {
+  const { data } = await instance.get("/", {
+    params: {
+      q,
+    },
+  });
+  return data;
+};
