@@ -23,6 +23,7 @@ class PostsSearchForm extends Component {
     this.setState({
       title: "",
       author: "",
+      search: "",
     });
   };
   render() {
@@ -33,7 +34,7 @@ class PostsSearchForm extends Component {
         <TextField
           value={search}
           id={searchId}
-          onChange={handleChange}
+          handleChange={handleChange}
           {...fields.search}
         />
         <SubmitButton text="Search" />
