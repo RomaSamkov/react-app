@@ -1,0 +1,30 @@
+.overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    opacity: 0.8;
+}
+
+.modal{
+    position: relative;
+    border-radius: 10px;
+    padding: 25px 15px 15px;
+    background-color: #fff;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+    cursor: pointer;
+}
