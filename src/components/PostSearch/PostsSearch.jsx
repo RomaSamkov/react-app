@@ -13,6 +13,10 @@ class PostsSearch extends Component {
     search: "",
     page: 1,
     modalOpen: false,
+    modalContent: {
+      title: "",
+      body: "",
+    },
   };
 
   componentDidUpdate(_, prevState) {
@@ -54,20 +58,36 @@ class PostsSearch extends Component {
     }));
   };
 
-  openModal = () => {
+  openModal = (modalContent) => {
     this.setState({
       modalOpen: true,
+      modalContent,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalOpen: false,
+      modalContent: {
+        title: "",
+        body: "",
+      },
     });
   };
 
   render() {
-    const { onSearch, loadMore, openModal } = this;
-    const { items, loading, error, modalOpen } = this.state;
+    const { onSearch, loadMore, openModal, closeModal } = this;
+    const { items, loading, error, modalOpen, modalContent } = this.state;
     const isPosts = Boolean(items.length);
 
     return (
       <div>
-        {modalOpen && <Modal />}
+        {modalOpen && (
+          <Modal close={closeModal}>
+            <h3 className={styles.postTitle}>{modalContent.title}</h3>
+            <p className={styles.postContent}>{modalContent.body}</p>
+          </Modal>
+        )}
         <PostsSearchForm onSubmit={onSearch} />
         {isPosts && <PostList items={items} onClick={openModal} />}
         {loading && <p>...Loading posts!!!</p>}
