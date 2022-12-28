@@ -5,6 +5,7 @@ class Modal extends Component {
   componentDidMount() {
     document.addEventListener("keydown", this.closeModal);
   }
+
   closeModal = ({ target, currentTarget, code }) => {
     if (target === currentTarget || code === "Escape") {
       this.props.close();
