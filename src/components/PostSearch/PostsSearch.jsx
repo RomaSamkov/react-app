@@ -82,7 +82,10 @@ class PostsSearch extends Component {
 
     return (
       <div>
-        <h1 className={styles.holiday}>Happy Holiday !!! Happy New Year !!!</h1>
+        <h1 className={styles.holiday}>
+          Happy Holiday !!! Happy New Year !!! <br />
+          Happy developer.
+        </h1>
         {modalOpen && (
           <Modal close={closeModal}>
             <h3 className={styles.postTitle}>{modalContent.title}</h3>
