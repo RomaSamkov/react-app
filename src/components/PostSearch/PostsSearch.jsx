@@ -84,7 +84,7 @@ class PostsSearch extends Component {
       <div>
         <h1 className={styles.holiday}>
           Happy Holiday !!! Happy New Year !!! <br />
-          Happy developer.
+          Happy developer. React.
         </h1>
         {modalOpen && (
           <Modal close={closeModal}>
