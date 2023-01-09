@@ -1,8 +1,37 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import FormAddBook from "./FormAddBook/FormAddBook";
 import BookList from "./BookList/BookList";
 import styles from "./Books.module.scss";
 import { nanoid } from "nanoid";
+
+const Books = () => {
+  const [books, setBooks] = useState([]);
+  const [filter, setFilter] = useState("");
+
+  const addBook = (data) => {
+    if (isDublicate(data)) {
+      return alert(`${data.title} - ${data.author} is already in list`);
+    }
+    setBooks((prevBooks) => {
+      const newBook = {
+        id: nanoid(),
+        ...data,
+      };
+      return [...prevBooks.books, newBook];
+    });
+  };
+
+  const removeBook = (id) => {
+    setBooks((prevBooks) => prevBooks.filter((item) => item.id !== id));
+  };
+
+  const isDublicate = ({ title, author }) => {
+    const result = books.find(
+      (item) => item.title === title && item.author === author
+    );
+    return Boolean(result);
+  };
+};
 
 class Books extends Component {
   state = {
