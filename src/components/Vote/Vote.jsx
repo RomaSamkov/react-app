@@ -9,22 +9,26 @@ const Vote = () => {
     JS: 0,
     Phyton: 0,
   });
-  const countTotal = () => {
-    const { JS, Phyton } = state;
-    return JS + Phyton;
+
+  const handleVote = (propertyName) => {
+    setState((prevState) => {
+      const value = prevState[propertyName];
+      return { ...prevState, [propertyName]: value + 1 };
+    });
   };
 
+  const { JS, Phyton } = state;
+  const total = JS + Phyton;
+
   const countPercentage = (propertyName) => {
-    const total = this.countTotal();
     if (!total) {
       return 0;
     }
-    const value = this.state[propertyName];
+    const value = state[propertyName];
     const result = (value / total) * 100;
     return Number(result.toFixed(2));
   };
-  const { JS, Phyton } = state;
-  const total = countTotal();
+
   const jsPercentage = countPercentage("JS");
   const phytonPercentage = countPercentage("Phyton");
   // const { handleVote } = this;
@@ -32,7 +36,7 @@ const Vote = () => {
   return (
     <div className={styles.wrapper}>
       <Block title="Votes for:">
-        <VoteActions handleVote={this.handleVote} />
+        <VoteActions handleVote={handleVote} />
       </Block>
       <Block title="Results:">
         <VoteResults
