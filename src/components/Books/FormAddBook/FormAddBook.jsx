@@ -20,7 +20,6 @@ const FormAddBook = ({ onSubmit }) => {
       title: "",
       author: "",
     });
-    console.log("I don't do task today!");
   };
 
   const { title, author } = state;
