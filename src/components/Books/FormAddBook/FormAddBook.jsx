@@ -15,6 +15,7 @@ const FormAddBook = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("I dont understand how to code");
     onSubmit({ ...state });
     setState({
       title: "",
