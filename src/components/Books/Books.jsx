@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormAddBook from "./FormAddBook/FormAddBook";
 import BookList from "./BookList/BookList";
 import styles from "./Books.module.scss";
 import { nanoid } from "nanoid";
 
 const Books = () => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState(() => {
+    const value = JSON.parse(localStorage.getItem("books"));
+    return value || [];
+  });
   const [filter, setFilter] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   const addBook = (data) => {
     if (isDublicate(data)) {
