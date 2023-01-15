@@ -1,17 +1,17 @@
 import styles from "./PostList.module.scss";
 
 const PostList = ({ items, onClick }) => {
-  const element = items.map(({ id, title, body }) => (
+  const elements = items.map(({ id, title, body }) => (
     <li
       key={id}
-      className={styles.item}
       onClick={() => onClick({ title, body })}
+      className={styles.item}
     >
       {title}
     </li>
   ));
 
-  return <ul className={styles.list}>{element}</ul>;
+  return <ul className={styles.list}>{elements}</ul>;
 };
 
 export default PostList;
