@@ -1,23 +1,22 @@
-// import Books from "./components/Books/Books";
-import Posts from "./components/Posts/Posts";
-// import PostsSearch from "./components/PostSearch/PostsSearch";
+// import Vote from "./modules/Vote";
+// import ToggleButton from "./shared/components/ToggleButton";
+// import HeaderMenu from "./modules/HeaderMenu";
+import MyBooks from "./modules/MyBooks";
+// import Tabs from "./modules/Tabs";
 
-// import { Header } from "./components/Header/Header";
-// import Menu from "./components/Menu/Menu";
-// import ToggleButton from "./components/ToggleButton/ToggleButton";
-// import Vote from "./components/Vote/Vote";
-// import menuItems from "./data/menuItems.json";
+import "./App.css";
+
+// import menuItems from "./data/menu.json";
+// import tabsItems from "./data/tabs.json"
 
 function App() {
   return (
     <div className="App">
-      {/* <Header menuItems={menuItems} /> */}
-      {/* <Menu menuItems={menuItems} /> */}
-      {/* <ToggleButton text="Click Me" /> */}
+      {/* <Tabs items={tabsItems} /> */}
       {/* <Vote /> */}
-      {/* <Books /> */}
-      <Posts />
-      {/* <PostsSearch /> */}
+      {/* <ToggleButton text="Click me" /> */}
+      {/* <HeaderMenu items={menuItems} /> */}
+      <MyBooks />
     </div>
   );
 }
