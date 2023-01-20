@@ -43,7 +43,9 @@ const FormAddBook = ({ onSubmit }) => {
         />
       </div>
       <div className={styles.group}>
-        <button type="submit">Добавить</button>
+        <button className={styles.btn} type="submit">
+          Добавить
+        </button>
       </div>
     </form>
   );
