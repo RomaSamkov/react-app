@@ -1,0 +1,35 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 15px;
+}
+
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+    width: 80px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: rgb(128, 0, 100);
+    font-size: 16px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.link:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.active {
+    background-color: green;
+    color: #fff;
+}
