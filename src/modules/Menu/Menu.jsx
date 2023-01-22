@@ -20,6 +20,11 @@ const Menu = () => {
             Contacts
           </Link>
         </li>
+        <li>
+          <Link className={styles.link} to="/books">
+            Books
+          </Link>
+        </li>
       </ul>
     </div>
   );
