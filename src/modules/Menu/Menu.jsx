@@ -1,29 +1,34 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Menu.module.scss";
+
+const getClassName = ({ isActive }) => {
+  const className = isActive ? `${styles.link} ${styles.active}` : styles.link;
+  return className;
+};
 
 const Menu = () => {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.menu}>
         <li>
-          <Link className={styles.link} to="/">
+          <NavLink className={getClassName} to="/">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={styles.link} to="/posts">
+          <NavLink className={getClassName} to="/posts">
             Posts
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={styles.link} to="/contacts">
+          <NavLink className={getClassName} to="/contacts">
             Contacts
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className={styles.link} to="/books">
+          <NavLink className={getClassName} to="/books">
             Books
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>
