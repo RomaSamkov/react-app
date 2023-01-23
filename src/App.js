@@ -10,6 +10,7 @@ import HomePage from "pages/HomePage/HomePage";
 import BooksPage from "pages/BooksPage/BooksPage";
 import PostsPage from "pages/PostsPage/PostsPage";
 import ContactsPage from "pages/ContactsPage/ContactsPage";
+import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
 
 // import menuItems from "./data/menu.json";
 // import tabsItems from "./data/tabs.json"
@@ -23,6 +24,7 @@ function App() {
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/books" element={<BooksPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       {/* <Tabs items={tabsItems} /> */}
 
