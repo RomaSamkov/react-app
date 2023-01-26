@@ -11,6 +11,7 @@ import BooksPage from "pages/BooksPage/BooksPage";
 import PostsPage from "pages/PostsPage/PostsPage";
 import ContactsPage from "pages/ContactsPage/ContactsPage";
 import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
+import SinglePostsPage from "pages/SinglePostsPage/SinglePostsPage";
 
 // import menuItems from "./data/menu.json";
 // import tabsItems from "./data/tabs.json"
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/posts" element={<PostsPage />} />
+        <Route path="/posts/:id" element={<SinglePostsPage />} />
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/books" element={<BooksPage />} />
         <Route path="*" element={<NotFoundPage />} />
