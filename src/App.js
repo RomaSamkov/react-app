@@ -5,13 +5,7 @@
 
 import "./App.css";
 import Menu from "modules/Menu";
-import { Route, Routes } from "react-router-dom";
-import HomePage from "pages/HomePage/HomePage";
-import BooksPage from "pages/BooksPage/BooksPage";
-import PostsPage from "pages/PostsPage/PostsPage";
-import ContactsPage from "pages/ContactsPage/ContactsPage";
-import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
-import SinglePostsPage from "pages/SinglePostsPage/SinglePostsPage";
+import UserRoutes from "UserRoutes";
 
 // import menuItems from "./data/menu.json";
 // import tabsItems from "./data/tabs.json"
@@ -20,16 +14,8 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/posts" element={<PostsPage />} />
-        <Route path="/posts/:id" element={<SinglePostsPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
-        <Route path="/books" element={<BooksPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <UserRoutes />
       {/* <Tabs items={tabsItems} /> */}
-
       {/* <ToggleButton text="Click me" /> */}
       {/* <HeaderMenu items={menuItems} /> */}
       {/* <MyBooks /> */}
