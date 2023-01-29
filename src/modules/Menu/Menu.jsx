@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import items from "./items";
 import styles from "./Menu.module.scss";
 
 const getClassName = ({ isActive }) => {
@@ -7,30 +8,16 @@ const getClassName = ({ isActive }) => {
 };
 
 const Menu = () => {
+  const elements = items.map(({ id, to, text }) => (
+    <li key={id}>
+      <NavLink className={getClassName} to={to}>
+        {text}
+      </NavLink>
+    </li>
+  ));
   return (
     <div className={styles.wrapper}>
-      <ul className={styles.menu}>
-        <li>
-          <NavLink className={getClassName} to="/">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={getClassName} to="/posts">
-            Posts
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={getClassName} to="/contacts">
-            Contacts
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={getClassName} to="/books">
-            Books
-          </NavLink>
-        </li>
-      </ul>
+      <ul className={styles.menu}>{elements}</ul>
     </div>
   );
 };
