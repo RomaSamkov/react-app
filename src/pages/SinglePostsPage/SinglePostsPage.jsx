@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getSinglePost } from "shared/services/posts";
 
 const SinglePostsPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [state, setState] = useState({
     item: {},
     loading: false,
@@ -44,10 +45,13 @@ const SinglePostsPage = () => {
     fetchPosts();
   }, [setState, id]);
 
+  const goBack = () => navigate(-1);
+
   const { title, body } = state.item;
 
   return (
     <div className="container">
+      <button onClick={goBack}>Go Back</button>
       <h2>{title}</h2>
       <p>{body}</p>
     </div>
