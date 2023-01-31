@@ -1,5 +1,5 @@
+import PostList from "modules/PostList/PostList";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getPosts } from "shared/services/posts";
 
 const Posts = () => {
@@ -45,15 +45,9 @@ const Posts = () => {
 
   const { items, loading, error } = state;
 
-  const elements = items.map(({ id, title }) => (
-    <li key={id}>
-      <Link to={`/posts/${id}`}>{title}</Link>
-    </li>
-  ));
-
   return (
     <div>
-      <ol>{elements}</ol>
+      {items.length > 0 && <PostList items={items} />}
       {loading && <p>...load posts</p>}
       {error && <p>...Posts load failed</p>}
     </div>
