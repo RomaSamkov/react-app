@@ -16,6 +16,7 @@ export const getPosts = async (_page = 1) => {
 
   return data;
 };
+
 export const getSinglePost = async (id) => {
   const { data } = await instance.get(`/${id}`);
 
@@ -29,5 +30,11 @@ export const searchPosts = async (q, _page = 1) => {
       _page,
     },
   });
+  return data;
+};
+
+export const getPostComments = async (id) => {
+  const { data } = await instance.get(`/${id}/comments`);
+
   return data;
 };
