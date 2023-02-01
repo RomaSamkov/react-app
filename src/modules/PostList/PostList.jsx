@@ -1,10 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const PostList = ({ items }) => {
+  const location = useLocation();
+
   const elements = items.map(({ id, title }) => (
     <li key={id}>
-      <Link to={`/posts/${id}`}>{title}</Link>
+      <Link state={{ from: location }} to={`/posts/${id}`}>
+        {title}
+      </Link>
     </li>
   ));
   return <ol>{elements}</ol>;
