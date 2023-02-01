@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { getSinglePost } from "shared/services/posts";
 
 const SinglePostsPage = () => {
@@ -10,6 +16,9 @@ const SinglePostsPage = () => {
     loading: false,
     error: null,
   });
+
+  const location = useLocation();
+  const from = location.state?.from || "/posts";
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -45,7 +54,7 @@ const SinglePostsPage = () => {
     fetchPosts();
   }, [setState, id]);
 
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate(from);
 
   const { title, body } = state.item;
 
@@ -54,6 +63,10 @@ const SinglePostsPage = () => {
       <button onClick={goBack}>Go Back</button>
       <h2>{title}</h2>
       <p>{body}</p>
+      <Link state={{ from }} to={`/posts/${id}/comments`}>
+        Comments
+      </Link>
+      <Outlet />
     </div>
   );
 };
