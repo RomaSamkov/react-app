@@ -1,24 +1,36 @@
-import BooksPage from "pages/BooksPage/BooksPage";
-import ContactsPage from "pages/ContactsPage/ContactsPage";
-import HomePage from "pages/HomePage/HomePage";
-import NotFoundPage from "pages/NotFoundPage/NotFoundPage";
-import PostsSearchPage from "pages/PostsSearchPage/PostsSearchPage";
-import SinglePostsPage from "pages/SinglePostsPage/SinglePostsPage";
-import VotePage from "pages/VotePage/VotePage";
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+
+const BooksPage = lazy(() => import("pages/BooksPage/BooksPage"));
+const ContactsPage = lazy(() => import("pages/ContactsPage/ContactsPage"));
+const HomePage = lazy(() => import("pages/HomePage/HomePage"));
+const NotFoundPage = lazy(() => import("pages/NotFoundPage/NotFoundPage"));
+const PostsSearchPage = lazy(() =>
+  import("pages/PostsSearchPage/PostsSearchPage")
+);
+const SinglePostsCommentsPage = lazy(() =>
+  import("pages/SinglePostsCommentsPage/SinglePostsCommentsPage")
+);
+const SinglePostsPage = lazy(() =>
+  import("pages/SinglePostsPage/SinglePostsPage")
+);
+const VotePage = lazy(() => import("pages/VotePage/VotePage"));
 
 const UserRoutes = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/posts" element={<PostsSearchPage />} />
-      <Route path="/posts/:id" element={<SinglePostsPage />} />
-      <Route path="/contacts" element={<ContactsPage />} />
-      <Route path="/books" element={<BooksPage />} />
-      <Route path="/vote" element={<VotePage />} />
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <Suspense fallback={<p>...Loading</p>}>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/posts" element={<PostsSearchPage />} />
+        <Route path="/posts/:id" element={<SinglePostsPage />}>
+          <Route path="comments" element={<SinglePostsCommentsPage />} />
+        </Route>
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/books" element={<BooksPage />} />
+        <Route path="/vote" element={<VotePage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 };
 
