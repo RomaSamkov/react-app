@@ -21,7 +21,7 @@ const PostsSearchPage = () => {
           ...prevState,
           loading: true,
         }));
-        console.log("search:", search);
+
         const data = await searchPosts(search);
 
         setState((prevState) => ({ ...prevState, items: data }));
