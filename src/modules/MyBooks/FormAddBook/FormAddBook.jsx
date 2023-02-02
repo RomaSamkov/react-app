@@ -12,13 +12,13 @@ const FormAddBook = ({ onSubmit }) => {
     onSubmit,
   });
 
-  const { title, author } = state;
+  const { title, author, favorite } = state;
 
   return (
     <form action="" onSubmit={handleSubmit}>
       <div className={styles.group}>
         <label className={styles.label} htmlFor="">
-          Название:
+          Title:
         </label>
         <input
           value={title}
@@ -26,12 +26,12 @@ const FormAddBook = ({ onSubmit }) => {
           onChange={handleChange}
           className={styles.input}
           type="text"
-          placeholder="Название книги"
+          placeholder="Title of book"
         />
       </div>
       <div className={styles.group}>
         <label className={styles.label} htmlFor="">
-          Автор:
+          Author:
         </label>
         <input
           value={author}
@@ -39,12 +39,24 @@ const FormAddBook = ({ onSubmit }) => {
           onChange={handleChange}
           className={styles.input}
           type="text"
-          placeholder="Автор книги"
+          placeholder="Author of book"
+        />
+      </div>
+      <div className={styles.group}>
+        <label className={styles.label} htmlFor="">
+          Favorite:
+        </label>
+        <input
+          value={author}
+          name="favorite"
+          onChange={handleChange}
+          type="checkbox"
+          checked={favorite}
         />
       </div>
       <div className={styles.group}>
         <button className={styles.btn} type="submit">
-          Добавить
+          Add book
         </button>
       </div>
     </form>
