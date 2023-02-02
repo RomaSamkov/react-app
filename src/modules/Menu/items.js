@@ -13,8 +13,8 @@ const items = [
   },
   {
     id: nanoid(),
-    to: "/contacts",
-    text: "Contacts",
+    to: "/my-favorite-books",
+    text: "Favorite Books",
   },
   {
     id: nanoid(),
