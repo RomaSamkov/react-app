@@ -24,5 +24,3 @@ const reducer = (store = initialStore) => {
 const store = createStore(reducer);
 
 export default store;
-
-console.log(store.getState());
