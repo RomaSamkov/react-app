@@ -5,8 +5,7 @@ const useForm = ({ initialState, onSubmit }) => {
 
   const handleChange = ({ target }) => {
     const { name, value, type, checked } = target;
-    console.log("type:", type);
-    console.log("checked:", checked);
+
     const newValue = type === "checkbox" ? checked : value;
     setState((prevState) => ({
       ...prevState,
