@@ -1,3 +1,4 @@
+import MyFavoriteBooksPage from "pages/MyFavoriteBooksPage/MyFavoriteBooksPage";
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const UserRoutes = () => {
         </Route>
         <Route path="/contacts" element={<ContactsPage />} />
         <Route path="/books" element={<BooksPage />} />
+        <Route path="/my-favorite-books" element={<MyFavoriteBooksPage />} />
         <Route path="/vote" element={<VotePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
