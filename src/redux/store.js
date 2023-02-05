@@ -1,22 +1,5 @@
 import { createStore } from "redux";
-import { ADD_BOOK, REMOVE_BOOK } from "./types";
-
-const initialStore = {
-  books: [],
-};
-
-const reducer = (store = initialStore, { type, payload }) => {
-  switch (type) {
-    case ADD_BOOK:
-      return { ...store, books: [...store.books, payload] };
-    case REMOVE_BOOK:
-      const newBooks = store.books.filter(({ id }) => id !== payload);
-      return { ...store, books: newBooks };
-
-    default:
-      return store;
-  }
-};
+import reducer from "./reducer";
 
 const store = createStore(
   reducer,
