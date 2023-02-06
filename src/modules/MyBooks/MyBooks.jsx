@@ -4,11 +4,11 @@ import BookList from "./BookList";
 
 import styles from "./my-books.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addBook, removeBook } from "redux/actions";
-import { getBooks, getFilter } from "redux/selectors";
+import { addBook, removeBook, setFilter } from "redux/actions";
+import { getFilter, getFilteredBooks } from "redux/selectors";
 
 const MyBooks = () => {
-  const books = useSelector(getBooks);
+  const books = useSelector(getFilteredBooks);
   const filter = useSelector(getFilter);
 
   const dispatch = useDispatch();
@@ -22,6 +22,10 @@ const MyBooks = () => {
     dispatch(removeBook(payload));
   };
 
+  const onSetFilter = ({ target }) => {
+    dispatch(setFilter(target.value));
+  };
+
   return (
     <div className={styles.books}>
       <Container title="Add book">
@@ -29,6 +33,7 @@ const MyBooks = () => {
       </Container>
       <Container title="List of books">
         <input
+          onChange={onSetFilter}
           value={filter}
           name="filter"
           type="text"
