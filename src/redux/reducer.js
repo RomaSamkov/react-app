@@ -1,4 +1,4 @@
-import { ADD_BOOK, REMOVE_BOOK } from "./types";
+import { ADD_BOOK, REMOVE_BOOK, SET_FILTER } from "./types";
 
 const initialStore = {
   books: [],
@@ -12,6 +12,8 @@ const reducer = (store = initialStore, { type, payload }) => {
     case REMOVE_BOOK:
       const newBooks = store.books.filter(({ id }) => id !== payload);
       return { ...store, books: newBooks };
+    case SET_FILTER:
+      return { ...store, filter: payload };
 
     default:
       return store;
