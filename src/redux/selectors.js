@@ -4,3 +4,15 @@ export const getFavoriteBooks = (store) => {
   return favoriteBooks;
 };
 export const getFilter = ({ filter }) => filter;
+export const getFilteredBooks = ({ books, filter }) => {
+  const normalizedFilter = filter.toLowerCase();
+  const result = books.filter(({ title, author }) => {
+    const normalizedTitle = title.toLowerCase();
+    const normalizedAuthor = author.toLowerCase();
+    return (
+      normalizedTitle.includes(normalizedFilter) ||
+      normalizedAuthor.includes(normalizedFilter)
+    );
+  });
+  return result;
+};
