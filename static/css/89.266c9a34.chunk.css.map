@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/89.266c9a34.chunk.css","mappings":"AAAA,sBACI,cACA,YAGJ,sBACI","sources":["modules/PostList/PostList.module.scss"],"sourcesContent":[".link{\n    color: antiquewhite;\n    margin: 10px;\n}\n\n.item{\n    margin-bottom: 10px;\n}"],"names":[],"sourceRoot":""}
