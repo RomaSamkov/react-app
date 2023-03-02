@@ -1,0 +1,24 @@
+.books {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    border: 1px solid #c0c4cc;
+    padding: 11px;
+    color: #606266;
+    border-radius: 20px;
+}
+
+.input:focus {
+    outline: 2px solid aqua;
+}
+
+.label {
+    margin-left: 56px;
+    margin-right: 15px;
+    color: #fff;
+}
+
+
+
