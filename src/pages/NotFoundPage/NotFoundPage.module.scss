@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    padding-left: 50px;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'ChanticleerRomanNF-bold';
+    font-weight: bold;
+    font-size: 38px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.link {
+    text-decoration: none;
+    font-family: 'BoyzRGrossShadowNF';
+    font-size: 36px;
+    color: black;
+}
+
+.link:hover,
+:focus {
+    font-size: 36px;
+    color: #fff;
+    transition: all 500ms;
+}
+
+.fontFaceText {
+    font-family: 'ChanticleerRomanNF-bold';
+    font-size: 36px;
+}
+
+.fontLink {
+    display: flex;
+    text-decoration: none;
+    font-family: 'BoyzRGrossShadowNF';
+    font-size: 36px;
+    margin-left: 25px;
+    color: #fff;
+}
+
+.fontLink:hover {
+    text-decoration: underline;
+}
