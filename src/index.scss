@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(71,66,230);
+background: linear-gradient(90deg, rgba(71,66,230,0.9864320728291317) 0%, 
+rgba(139,136,238,0.927608543417367) 47%, 
+rgba(90,105,235,1) 74%, 
+rgba(36,82,195,1) 96%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "Luckiest Guy";
+  src: url('./fonts/LuckiestGuy.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "BoyzRGrossShadowNF";
+  src: url('./fonts/BoyzRGrossShadowNF.ttf');
+}
+
+@font-face {
+  font-family: "ChanticleerRomanNF-bold";
+  src: url('./fonts/ChanticleerRomanNF-Bold.ttf');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  margin: 0;
+	padding: 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
