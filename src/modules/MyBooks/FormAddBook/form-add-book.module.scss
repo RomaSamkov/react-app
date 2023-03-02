@@ -1,0 +1,40 @@
+.group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.label {
+    flex: 0 0 150px;
+    text-align: left;
+}
+
+.input {
+    border: 1px solid #c0c4cc;
+    padding: 11px;
+    color: #606266;
+    border-radius: 20px;
+}
+
+.input:focus {
+    outline: 2px solid aqua;
+}
+
+.btn {
+    display: inline-block;
+    width: 180px;
+    cursor: pointer;
+    padding: 10px 15px;
+    color: rgb(128, 0, 100);
+    background-color: #fff;
+    border: 2px solid rgb(128, 0, 100);
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 150px;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: rgb(128, 0, 100);
+    transition: all 500ms;
+}
