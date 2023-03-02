@@ -1,0 +1,17 @@
+.container {
+    flex: 0 0 45%;
+    border: 1px solid #dcdfe6;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'ChanticleerRomanNF-bold';
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fff;
+}
