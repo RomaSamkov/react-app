@@ -7,6 +7,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { getSinglePost } from "shared/services/posts";
+import styles from "./SinglePostsPage.module.scss";
 
 const SinglePostsPage = () => {
   const { id } = useParams();
@@ -60,10 +61,16 @@ const SinglePostsPage = () => {
 
   return (
     <div className="container">
-      <button onClick={goBack}>Go Back</button>
-      <h2>{title}</h2>
-      <p>{body}</p>
-      <Link state={{ from }} to={`/posts/${id}/comments`}>
+      <button className={styles.btn} onClick={goBack}>
+        ⬅ Go Back
+      </button>
+      <h2 className={styles.title}>{title}</h2>
+      <p className={styles.text}>{body}</p>
+      <Link
+        className={styles.link}
+        state={{ from }}
+        to={`/posts/${id}/comments`}
+      >
         Comments
       </Link>
       <Outlet />
