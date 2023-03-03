@@ -1,0 +1,30 @@
+.input {
+    width: 300px;
+    border: 1px solid #c0c4cc;
+    padding: 11px;
+    color: #606266;
+    border-radius: 20px;
+}
+
+.input:focus {
+    outline: 2px solid aqua;
+}
+
+.btn{
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    padding: 11px;
+    margin-left: 10px;
+    background-color: rgba(92, 1, 72, 0.507);
+    color: #fff;
+}
+
+.btn:hover,:focus{
+    background-color: #2a14f3e3;
+}
+
+.form{
+    margin-top: 20px;
+    margin-left: 40px;
+}
