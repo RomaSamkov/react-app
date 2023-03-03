@@ -1,0 +1,27 @@
+.title{
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.text{
+    margin-bottom: 10px;
+}
+
+.link{
+    color: #fff;
+}
+
+.btn {
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    padding: 8px 20px;
+    margin-bottom: 30px;
+    background-color: rgba(92, 1, 72, 0.507);
+    color: #fff;
+}
+
+.btn:hover,
+:focus {
+    background-color: #2a14f3e3;
+}
