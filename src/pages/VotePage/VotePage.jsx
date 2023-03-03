@@ -1,10 +1,11 @@
 import Vote from "modules/Vote/Vote";
 import React from "react";
+import styles from "./VotePage.module.scss";
 
 const VotePage = () => {
   return (
     <div className="container">
-      <h2>Vote Page</h2>
+      <h2 className={styles.title}>Vote Results</h2>
       <Vote />
     </div>
   );
